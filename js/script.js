@@ -14,8 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
      HERO BANNER SLIDER (TribalDr-style)
      ============================================================ */
   var heroSlider = document.getElementById('heroSlider');
-  var heroPrev = document.getElementById('heroPrev');
-  var heroNext = document.getElementById('heroNext');
   var heroDots = document.getElementById('heroDots');
 
   if (heroSlider) {
@@ -56,19 +54,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 5000);
       }
 
-      if (heroPrev) {
-        heroPrev.addEventListener('click', function () {
-          goToSlide(current - 1);
-          restartHeroTimer();
-        });
-      }
-      if (heroNext) {
-        heroNext.addEventListener('click', function () {
-          goToSlide(current + 1);
-          restartHeroTimer();
-        });
-      }
-
       restartHeroTimer();
     }
   }
@@ -77,39 +62,11 @@ document.addEventListener('DOMContentLoaded', function () {
      APPRECIATIONS CAROUSEL
      ============================================================ */
   var appTrack = document.getElementById('appTrack');
-  var appPrev = document.getElementById('appPrev');
-  var appNext = document.getElementById('appNext');
-
-  if (appTrack && appPrev && appNext) {
-    var scrollAmount = 280; // ~ card width + gap
-
-    appPrev.addEventListener('click', function () {
-      appTrack.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    });
-
-    appNext.addEventListener('click', function () {
-      appTrack.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    });
-  }
 
   /* ============================================================
      PERSONALITIES CAROUSEL
      ============================================================ */
   var personTrack = document.getElementById('personTrack');
-  var personPrev = document.getElementById('personPrev');
-  var personNext = document.getElementById('personNext');
-
-  if (personTrack && personPrev && personNext) {
-    var personScrollAmount = 260; // ~ card width + gap
-
-    personPrev.addEventListener('click', function () {
-      personTrack.scrollBy({ left: -personScrollAmount, behavior: 'smooth' });
-    });
-
-    personNext.addEventListener('click', function () {
-      personTrack.scrollBy({ left: personScrollAmount, behavior: 'smooth' });
-    });
-  }
 
   /* ============================================================
      MOBILE MENU
@@ -335,5 +292,98 @@ document.addEventListener('DOMContentLoaded', function () {
       }, 500);
     }, 400);
   });
+
+    /* ============================================================
+     NEWS TITLES (click title to reveal/hide image)
+     ============================================================ */
+  var newsTitles = document.querySelectorAll('.news-title');
+  if (newsTitles.length > 0) {
+    newsTitles.forEach(function (title) {
+      title.style.cursor = 'pointer';
+      title.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var container = this.nextElementSibling;
+        if (container && container.classList.contains('news-image-container')) {
+          if (container.style.display === 'none') {
+            container.style.display = 'block';
+          } else {
+            container.style.display = 'none';
+          }
+        }
+      });
+    });
+  }
+
+  /* ============================================================
+     TESTIMONIAL LIGHTBOX (click card image to view full letter)
+     ============================================================ */
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightboxImg');
+  var lightboxClose = document.getElementById('lightboxClose');
+
+  if (lightbox && lightboxImg && lightboxClose) {
+    Array.prototype.forEach.call(document.querySelectorAll('.card-img-clickable'), function (el) {
+      el.addEventListener('click', function () {
+        var full = el.getAttribute('data-full');
+        if (full) {
+          // HTML data opens in a new browser tab (e.g. appreciation letter pages)
+          if (/\.html?$/i.test(full)) {
+            window.open(full, '_blank');
+            return;
+          }
+          lightboxImg.setAttribute('src', full);
+          lightbox.classList.add('open');
+          lightbox.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    lightbox.addEventListener('click', closeLightbox);
+    lightboxClose.addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+        closeLightbox();
+      }
+    });
+  }
+
+  /* ============================================================
+     PHOTO GALLERY PAGINATION (Page 1 / Page 2)
+     ============================================================ */
+  var gPageEls = Array.prototype.slice.call(document.querySelectorAll('.gallery-page'));
+  var gPrevBtn = document.getElementById('galleryPrev');
+  var gNextBtn = document.getElementById('galleryNext');
+  var gInfoEl = document.getElementById('galleryPageInfo');
+
+  if (gPageEls.length > 1 && gPrevBtn && gNextBtn && gInfoEl) {
+    var gCurrent = 0;
+
+    function showGalleryPage(page) {
+      gCurrent = Math.max(0, Math.min(page, gPageEls.length - 1));
+      gPageEls.forEach(function (pageEl, i) {
+        pageEl.classList.toggle('active', i === gCurrent);
+      });
+      gInfoEl.textContent = 'Page ' + (gCurrent + 1) + ' of ' + gPageEls.length;
+      gPrevBtn.disabled = (gCurrent === 0);
+      gNextBtn.disabled = (gCurrent === gPageEls.length - 1);
+      gPageEls[gCurrent].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    gPrevBtn.addEventListener('click', function () {
+      showGalleryPage(gCurrent - 1);
+    });
+    gNextBtn.addEventListener('click', function () {
+      showGalleryPage(gCurrent + 1);
+    });
+
+    showGalleryPage(0);
+  }
 
 });
