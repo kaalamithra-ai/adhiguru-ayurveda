@@ -1,7 +1,7 @@
 /* ============================================================
    AYUR VEDA - JavaScript Functionality
    - Banner Slider
-   - Carousels (Appreciations & Personalities)
+   - Carousels (Appreciations)
    - Mobile Navigation
    - FAQ Accordion
    - Contact Form
@@ -64,11 +64,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var appTrack = document.getElementById('appTrack');
 
   /* ============================================================
-     PERSONALITIES CAROUSEL
-     ============================================================ */
-  var personTrack = document.getElementById('personTrack');
-
-  /* ============================================================
      MOBILE MENU
      ============================================================ */
   var mobileMenuToggle = document.getElementById('mobileMenuToggle');
@@ -76,10 +71,14 @@ document.addEventListener('DOMContentLoaded', function () {
   let menuOverlay = null;
 
   if (mobileMenuToggle && mainNav) {
-    // Create overlay for mobile menu
+    // Create overlay for mobile menu.
+    // NOTE: z-index must be LOWER than the sticky .nav-bar (1000) because the
+    // slide-out .main-nav is nested inside the nav-bar stacking context.
+    // At the same z-index the overlay paints later and blocks all taps on
+    // the mobile menu links.
     menuOverlay = document.createElement('div');
     menuOverlay.className = 'menu-overlay';
-    menuOverlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:1000;opacity:0;visibility:hidden;transition:all 0.3s ease;';
+    menuOverlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:998;opacity:0;visibility:hidden;transition:all 0.3s ease;';
     document.body.appendChild(menuOverlay);
 
     mobileMenuToggle.addEventListener('click', function () {
@@ -117,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   faqItems.forEach(function (item) {
     var question = item.querySelector('.faq-question');
+    if (!question) return; // skip malformed items
 
     question.addEventListener('click', function () {
       // Close other items
@@ -140,16 +140,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
   medItems.forEach(function (item) {
     var head = item.querySelector('.med-item-head');
+    if (!head) return; // skip malformed cards instead of breaking all bindings
+
+    // Reflect initial open/closed state for screen readers
+    head.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
 
     head.addEventListener('click', function () {
       var isActive = item.classList.contains('active');
 
+      // Close every card, then re-open the clicked one (classic accordion)
       medItems.forEach(function (otherItem) {
         otherItem.classList.remove('active');
+        otherItem.querySelector('.med-item-head').setAttribute('aria-expanded', 'false');
       });
 
       if (!isActive) {
         item.classList.add('active');
+        head.setAttribute('aria-expanded', 'true');
       }
     });
   });
@@ -251,46 +258,28 @@ document.addEventListener('DOMContentLoaded', function () {
   // The seal uses CSS animation, no JS needed
 
   /* ============================================================
-     BACK TO TOP BUTTON (Utility)
+     FLOATING WHATSAPP BUTTON
      ============================================================ */
-  var backToTopBtn = document.createElement('button');
-  backToTopBtn.textContent = '☝';
-  backToTopBtn.setAttribute('aria-label', 'Back to top');
-  backToTopBtn.className = 'back-to-top';
-  backToTopBtn.style.cssText = 'position:fixed;bottom:30px;right:30px;width:45px;height:45px;border-radius:50%;background:#2d7a3e;color:#fff;border:none;font-size:20px;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,0.2);opacity:0;visibility:hidden;transition:all 0.3s ease;z-index:999;';
-  document.body.appendChild(backToTopBtn);
+  var whatsappFloatBtn = document.createElement('button');
+  whatsappFloatBtn.innerHTML = '<svg class="whatsapp-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.29z"/></svg>';
+  whatsappFloatBtn.setAttribute('aria-label', 'Chat with us on WhatsApp');
+  whatsappFloatBtn.className = 'back-to-top';
+  whatsappFloatBtn.style.cssText = 'position:fixed;bottom:30px;right:30px;width:50px;height:50px;border-radius:50%;background:#25d366;color:#fff;border:none;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,0.2);opacity:0;visibility:hidden;transition:all 0.3s ease;z-index:999;display:flex;align-items:center;justify-content:center;padding:10px;';
+  document.body.appendChild(whatsappFloatBtn);
 
-  backToTopBtn.addEventListener('click', function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  whatsappFloatBtn.addEventListener('click', function () {
+    window.open('https://wa.me/919489934444', '_blank', 'noopener');
   });
 
   window.addEventListener('scroll', function () {
     var scrollPos = window.scrollY;
     if (scrollPos > 400) {
-      backToTopBtn.style.opacity = '1';
-      backToTopBtn.style.visibility = 'visible';
+      whatsappFloatBtn.style.opacity = '1';
+      whatsappFloatBtn.style.visibility = 'visible';
     } else {
-      backToTopBtn.style.opacity = '0';
-      backToTopBtn.style.visibility = 'hidden';
+      whatsappFloatBtn.style.opacity = '0';
+      whatsappFloatBtn.style.visibility = 'hidden';
     }
-  });
-
-  /* ============================================================
-     PRELOADER (optional, shows briefly)
-     ============================================================ */
-  var preloader = document.createElement('div');
-  preloader.className = 'preloader';
-  preloader.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:#1e5826;z-index:9999;display:flex;align-items:center;justify-content:center;transition:opacity 0.5s ease;';
-  preloader.innerHTML = '<span style="font-size:60px;">🍃</span>';
-  document.body.appendChild(preloader);
-
-  window.addEventListener('load', function () {
-    setTimeout(function () {
-      preloader.style.opacity = '0';
-      setTimeout(function () {
-        preloader.style.display = 'none';
-      }, 500);
-    }, 400);
   });
 
     /* ============================================================
@@ -315,29 +304,33 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ============================================================
-     TESTIMONIAL LIGHTBOX (click card image to view full letter)
+     LIGHTBOX (testimonial letters + gallery images)
      ============================================================ */
   var lightbox = document.getElementById('lightbox');
   var lightboxImg = document.getElementById('lightboxImg');
   var lightboxClose = document.getElementById('lightboxClose');
 
   if (lightbox && lightboxImg && lightboxClose) {
-    Array.prototype.forEach.call(document.querySelectorAll('.card-img-clickable'), function (el) {
-      el.addEventListener('click', function () {
-        var full = el.getAttribute('data-full');
-        if (full) {
-          // HTML data opens in a new browser tab (e.g. appreciation letter pages)
-          if (/\.html?$/i.test(full)) {
-            window.open(full, '_blank');
-            return;
+    Array.prototype.forEach.call(
+      document.querySelectorAll('.card-img-clickable, .gallery-img img'),
+      function (el) {
+        el.addEventListener('click', function () {
+          var full = el.getAttribute('data-full') || el.getAttribute('src');
+          if (full) {
+            // HTML data opens in a new browser tab (e.g. appreciation letter pages)
+            if (/\.html?$/i.test(full)) {
+              window.open(full, '_blank');
+              return;
+            }
+            lightboxImg.setAttribute('src', full);
+            // Show the photo caption from alt text while zoomed in
+            lightboxImg.setAttribute('alt', el.getAttribute('alt') || 'Full size image');
+            lightbox.classList.add('open');
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
           }
-          lightboxImg.setAttribute('src', full);
-          lightbox.classList.add('open');
-          lightbox.setAttribute('aria-hidden', 'false');
-          document.body.style.overflow = 'hidden';
-        }
+        });
       });
-    });
 
     function closeLightbox() {
       lightbox.classList.remove('open');
@@ -355,35 +348,63 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ============================================================
-     PHOTO GALLERY PAGINATION (Page 1 / Page 2)
+     PHOTO GALLERY SLIDING WINDOW (carousel)
      ============================================================ */
-  var gPageEls = Array.prototype.slice.call(document.querySelectorAll('.gallery-page'));
+  var gTrack = document.getElementById('galleryTrack');
   var gPrevBtn = document.getElementById('galleryPrev');
   var gNextBtn = document.getElementById('galleryNext');
-  var gInfoEl = document.getElementById('galleryPageInfo');
 
-  if (gPageEls.length > 1 && gPrevBtn && gNextBtn && gInfoEl) {
-    var gCurrent = 0;
+  if (gTrack && gPrevBtn && gNextBtn) {
+    var gCards = Array.prototype.slice.call(gTrack.children);
+    var gIndex = 0;
 
-    function showGalleryPage(page) {
-      gCurrent = Math.max(0, Math.min(page, gPageEls.length - 1));
-      gPageEls.forEach(function (pageEl, i) {
-        pageEl.classList.toggle('active', i === gCurrent);
-      });
-      gInfoEl.textContent = 'Page ' + (gCurrent + 1) + ' of ' + gPageEls.length;
-      gPrevBtn.disabled = (gCurrent === 0);
-      gNextBtn.disabled = (gCurrent === gPageEls.length - 1);
-      gPageEls[gCurrent].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Number of cards visible at once — must match the CSS breakpoints
+    function visibleCardCount() {
+      if (window.innerWidth <= 600) return 1;
+      if (window.innerWidth <= 992) return 2;
+      return 3;
+    }
+
+    function maxGalleryIndex() {
+      return Math.max(0, gCards.length - visibleCardCount());
+    }
+
+    function updateSlider() {
+      if (gCards.length === 0) return;
+
+      var lastIndex = maxGalleryIndex();
+      gIndex = Math.max(0, Math.min(gIndex, lastIndex));
+
+      // Slide so the current card sits at the left edge of the window,
+      // clamped so the track never scrolls past its own end.
+      var windowEl = gTrack.parentElement;
+      var targetX = gCards[gIndex].offsetLeft;
+      var maxX = Math.max(0, gTrack.scrollWidth - windowEl.clientWidth);
+      var shift = Math.min(targetX, maxX);
+
+      gTrack.style.transform = 'translateX(' + (-shift) + 'px)';
+
+      gPrevBtn.disabled = (gIndex === 0);
+      gNextBtn.disabled = (gIndex >= lastIndex);
     }
 
     gPrevBtn.addEventListener('click', function () {
-      showGalleryPage(gCurrent - 1);
+      gIndex -= 1;
+      updateSlider();
     });
     gNextBtn.addEventListener('click', function () {
-      showGalleryPage(gCurrent + 1);
+      gIndex += 1;
+      updateSlider();
     });
 
-    showGalleryPage(0);
+    // Recalculate on resize so the window stays aligned
+    var gResizeTimer;
+    window.addEventListener('resize', function () {
+      clearTimeout(gResizeTimer);
+      gResizeTimer = setTimeout(updateSlider, 150);
+    });
+
+    updateSlider();
   }
 
 });
