@@ -348,63 +348,67 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ============================================================
-     PHOTO GALLERY SLIDING WINDOW (carousel)
+     PHOTO GALLERY PAGINATION
+     Stacks all cards in one column; pagination shows 6 per "page".
      ============================================================ */
-  var gTrack = document.getElementById('galleryTrack');
-  var gPrevBtn = document.getElementById('galleryPrev');
-  var gNextBtn = document.getElementById('galleryNext');
+  var galleryList = document.getElementById('galleryList');
+  var galleryPagination = document.getElementById('galleryPagination');
 
-  if (gTrack && gPrevBtn && gNextBtn) {
-    var gCards = Array.prototype.slice.call(gTrack.children);
-    var gIndex = 0;
+  if (galleryList && galleryPagination) {
+    var gCards = Array.prototype.slice.call(galleryList.children); // all <figure> cards
+    var PER_PAGE = 6;
+    var pageCount = Math.max(1, Math.ceil(gCards.length / PER_PAGE));
+    var currentPage = 1;
 
-    // Number of cards visible at once — must match the CSS breakpoints
-    function visibleCardCount() {
-      if (window.innerWidth <= 600) return 1;
-      if (window.innerWidth <= 992) return 2;
-      return 3;
+    function showPage(page) {
+      currentPage = Math.max(1, Math.min(page, pageCount));
+      gCards.forEach(function (card, idx) {
+        var onPage = Math.floor(idx / PER_PAGE) === currentPage - 1;
+        card.style.display = onPage ? '' : 'none';
+      });
+      updatePaginationButtons();
     }
 
-    function maxGalleryIndex() {
-      return Math.max(0, gCards.length - visibleCardCount());
+    function makeBtn(label, onClick, extraClass) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'gallery-page-btn' + (extraClass ? ' ' + extraClass : '');
+      btn.textContent = label;
+      btn.setAttribute('aria-label', 'Go to page ' + label);
+      btn.addEventListener('click', onClick);
+      return btn;
     }
 
-    function updateSlider() {
-      if (gCards.length === 0) return;
+    function updatePaginationButtons() {
+      galleryPagination.innerHTML = '';
 
-      var lastIndex = maxGalleryIndex();
-      gIndex = Math.max(0, Math.min(gIndex, lastIndex));
+      // Prev arrow
+      var prev = makeBtn('&#10094;', function () { showPage(currentPage - 1); }, 'gallery-page-arrow');
+      prev.dataset.arrow = 'prev';
+      prev.setAttribute('aria-label', 'Previous page');
+      prev.classList.toggle('disabled', currentPage === 1);
+      prev.disabled = (currentPage === 1);
+      galleryPagination.appendChild(prev);
 
-      // Slide so the current card sits at the left edge of the window,
-      // clamped so the track never scrolls past its own end.
-      var windowEl = gTrack.parentElement;
-      var targetX = gCards[gIndex].offsetLeft;
-      var maxX = Math.max(0, gTrack.scrollWidth - windowEl.clientWidth);
-      var shift = Math.min(targetX, maxX);
+      // Numbered square buttons
+      for (var p = 1; p <= pageCount; p++) {
+        (function (page) {
+          var b = makeBtn(String(page), function () { showPage(page); }, 'gallery-page-num');
+          if (page === currentPage) b.classList.add('active');
+          galleryPagination.appendChild(b);
+        })(p);
+      }
 
-      gTrack.style.transform = 'translateX(' + (-shift) + 'px)';
-
-      gPrevBtn.disabled = (gIndex === 0);
-      gNextBtn.disabled = (gIndex >= lastIndex);
+      // next arrow
+      var next = makeBtn('&#10095;', function () { showPage(currentPage + 1); }, 'gallery-page');
+      next.dataset.arrow = 'next';
+      next.setAttribute('aria-label', 'Next page');
+      next.classList.toggle('disabled', currentPage === pageCount);
+      next.disabled = (currentPage === pageCount);
+      galleryPagination.appendChild(next);
     }
 
-    gPrevBtn.addEventListener('click', function () {
-      gIndex -= 1;
-      updateSlider();
-    });
-    gNextBtn.addEventListener('click', function () {
-      gIndex += 1;
-      updateSlider();
-    });
-
-    // Recalculate on resize so the window stays aligned
-    var gResizeTimer;
-    window.addEventListener('resize', function () {
-      clearTimeout(gResizeTimer);
-      gResizeTimer = setTimeout(updateSlider, 150);
-    });
-
-    updateSlider();
+    showPage(1);
   }
 
 });
