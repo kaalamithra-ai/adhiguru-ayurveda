@@ -2119,3 +2119,36 @@ footer {
     padding: 25px 20px;
   }
 }
+/* ============================================================
+   MULTI-COLORED MEDICINE TEXT (vibrant condition items)
+   ============================================================ */
+
+/* Accordion card headings — cycle through 5 distinct colors */
+.med-detail-grid .med-item:nth-child(5n + 1) .med-item-head h3 { color: #D97706; } /* amber/gold */
+.med-detail-grid .med-item:nth-child(5n + 2) .med-item-head h3 { color: #DC2626; } /* crimson */
+.med-detail-grid .med-item:nth-child(5n + 3) .med-item-head h3 { color: #2563EB; } /* royal blue */
+.med-detail-grid .med-item:nth-child(5n + 4) .med-item-head h3 { color: #7C3AED; } /* purple */
+.med-detail-grid .med-item:nth-child(5n)     .med-item-head h3 { color: #0D9488; } /* teal */
+
+/* Condition list links — cycle through 8 distinct colors */
+.medicine-disease-grid ul li:nth-child(8n + 1) a { color: #D97706; } /* amber */
+.medicine-disease-grid ul li:nth-child(8n + 2) a { color: #059669; } /* emerald */
+.medicine-disease-grid ul li:nth-child(8n + 3) a { color: #DC2626; } /* crimson */
+.medicine-disease-grid ul li:nth-child(8n + 4) a { color: #2563EB; } /* royal blue */
+.medicine-disease-grid ul li:nth-child(8n + 5) a { color: #7C3AED; } /* purple */
+.medicine-disease-grid ul li:nth-child(8n + 6) a { color: #DB2777; } /* pink */
+.medicine-disease-grid ul li:nth-child(8n + 7) a { color: #0D9488; } /* teal */
+.medicine-disease-grid ul li:nth-child(8n)     a { color: #B45309; } /* deep gold */
+
+.medicine-disease-grid ul li a {
+  font-weight: 600;
+}
+
+/* About section now single column — let the text breathe */
+.about-flex {
+  display: block;
+}
+.about-left {
+  max-width: 820px;
+  margin: 0 auto;
+}
