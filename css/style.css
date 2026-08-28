@@ -1288,12 +1288,41 @@ h2 span {
 }
 
 .lightbox-img {
+  width: auto;
+  height: auto;
   max-width: 92%;
-  max-height: 90vh;
+  max-height: 88vh;
   border-radius: 10px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   background: #fff;
   cursor: default;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Expand preview image up to viewport bounds, keeping aspect ratio */
+.lightbox-img,
+.modal-content img,
+.lightbox-content img,
+.modal img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 90vw !important;
+  max-height: 85vh !important;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Modal wrapper must not constrain the image */
+.modal-dialog,
+.lightbox-container {
+  max-width: none !important;
+  width: auto !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .lightbox-close {
