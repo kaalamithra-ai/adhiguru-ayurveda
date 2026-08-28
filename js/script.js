@@ -383,7 +383,7 @@ document.addEventListener('DOMContentLoaded', function () {
       galleryPagination.innerHTML = '';
 
       // Prev arrow
-      var prev = makeBtn('&#10094;', function () { showPage(currentPage - 1); }, 'gallery-page-arrow');
+      var prev = makeBtn('<', function () { showPage(currentPage - 1); }, 'gallery-page-arrow');
       prev.dataset.arrow = 'prev';
       prev.setAttribute('aria-label', 'Previous page');
       prev.classList.toggle('disabled', currentPage === 1);
@@ -400,7 +400,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       // next arrow
-      var next = makeBtn('&#10095;', function () { showPage(currentPage + 1); }, 'gallery-page');
+      var next = makeBtn('>', function () { showPage(currentPage + 1); }, 'gallery-page');
       next.dataset.arrow = 'next';
       next.setAttribute('aria-label', 'Next page');
       next.classList.toggle('disabled', currentPage === pageCount);
