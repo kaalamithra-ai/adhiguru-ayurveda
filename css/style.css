@@ -1572,8 +1572,15 @@ h2 span {
   transition: var(--transition);
 }
 
+/* Gallery images are static: no hover zoom, no click-to-enlarge, maximum clarity */
 .gallery-card:hover .gallery-img img {
-  transform: scale(1.03);
+  transform: none;
+}
+
+.gallery-img img {
+  cursor: default;
+  pointer-events: none;   /* disables click/pinch zoom on the image itself */
+  image-rendering: -webkit-optimize-contrast;
 }
 
 /* Caption overlay pinned to the bottom of the image */
