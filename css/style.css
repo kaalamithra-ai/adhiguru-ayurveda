@@ -1336,7 +1336,6 @@ h2 span {
     padding: 15px 0 !important;           /* top/bottom padding centers the image */
     border-radius: 0;
     margin: 0 auto;
-    transform: scale(1.03);               /* enlarge 3% - still almost fully visible */
   }
 }
 
@@ -1572,14 +1571,13 @@ h2 span {
   transition: var(--transition);
 }
 
-/* Gallery images are static: no hover zoom, no click-to-enlarge, maximum clarity */
+/* Gallery images open in lightbox on click; cards stay static (no hover zoom) */
 .gallery-card:hover .gallery-img img {
   transform: none;
 }
 
 .gallery-img img {
-  cursor: default;
-  pointer-events: none;   /* disables click/pinch zoom on the image itself */
+  cursor: zoom-in;        /* clicking opens the lightbox preview */
   image-rendering: -webkit-optimize-contrast;
 }
 

@@ -312,7 +312,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (lightbox && lightboxImg && lightboxClose) {
     Array.prototype.forEach.call(
-      document.querySelectorAll('.card-img-clickable'),
+      document.querySelectorAll('.card-img-clickable, .gallery-img img'),
       function (el) {
         el.addEventListener('click', function () {
           var full = el.getAttribute('data-full') || el.getAttribute('src');
