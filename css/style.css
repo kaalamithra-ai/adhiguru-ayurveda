@@ -1332,6 +1332,7 @@ h2 span {
     object-fit: contain !important;   /* show the full image, keep aspect ratio */
     border-radius: 0;
     margin: 0 auto;
+    transform: scale(1.03);           /* enlarge 3% - still almost fully visible */
   }
 }
 
