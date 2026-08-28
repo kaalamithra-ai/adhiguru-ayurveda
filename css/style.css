@@ -1315,6 +1315,32 @@ h2 span {
   margin: 0 auto;
 }
 
+/* Mobile: make the lightbox image COVER the whole screen edge-to-edge */
+@media (max-width: 768px) {
+  .lightbox {
+    padding: 0;               /* no margins, image reaches every edge */
+  }
+
+  .lightbox-img,
+  .modal-content img,
+  .lightbox-content img,
+  .modal img {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: 100vw !important;
+    max-height: 100vh !important;
+    object-fit: cover !important;   /* fills + crops to fill the screen */
+    border-radius: 0;               /* edge-to-edge, no rounded corners */
+    margin: 0;
+  }
+
+  .lightbox-close {
+    top: 12px;
+    right: 16px;
+    z-index: 2001;
+  }
+}
+
 /* Modal wrapper must not constrain the image */
 .modal-dialog,
 .lightbox-container {
