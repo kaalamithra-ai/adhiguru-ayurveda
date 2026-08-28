@@ -4,3 +4,7 @@ _originals/
 _*.js
 _serve.js
 .vscode/
+
+_models/
+_edsr*
+_pip_*
