@@ -1,0 +1,6 @@
+# local backups and helper scripts
+_originals/
+*.bak
+_*.js
+_serve.js
+.vscode/
