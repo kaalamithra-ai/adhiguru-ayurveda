@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AYURVEDA - Ayurvedic Herbal Medicine</title>
+  <link rel="stylesheet" href="css/style.css?v=9">
+</head>
+<body>
+
+  <!-- ============================================================
+       TOP BAR
+       ============================================================ -->
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <nav class="nav-bar">
+    <div class="container menu">
+      <div class="logo">
+        <a href="#home">
+          <img src="generated_image_1 (1).png" alt="AYUR VEDA logo" class="logo-icon">
+        </a>
+      </div>
+
+      <div class="m-menu" id="mobileMenuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#appreciations">Appreciations</a></li>
+          <li><a href="#articles">Articles</a></li>
+          <li><a href="#medicines">Medicines</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO BANNER
+       ============================================================ -->
+  <section class="banner" id="home">
+    <div class="hero-slider" id="heroSlider">
+      <div class="slide active">
+        <img class="hero-img" src="hero.jpeg" alt="Ayurvedic herbal healing hero banner">
+      </div>
+    </div>
+
+    <div class="slider-dots" id="heroDots"></div>
+
+    <div class="guruji-seal">
+      <span>🛕</span>
+      <p>Guruji's<br>Blessed Seal</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT SECTION
+       ============================================================ -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <h2>About <span>Ayur Veda</span></h2>
+      <div class="divider">
+        <span></span>
+      </div>
+
+      <div class="about-flex">
+        <div class="about-left">
+          <p>For over 5,000 years, Ayurveda has been the world's most comprehensive natural healing system. Rooted in the ancient wisdom of the Vedas, our approach combines traditional herbal medicine with modern understanding to restore balance and vitality to body, mind, and spirit.</p>
+          <a href="#medicines" class="btn-secondary">Discover Our Approach</a>
+        </div>
+
+        <div class="about-right">
+          <h4>Common Conditions We Treat</h4>
+          <div class="disease-columns">
+            <div class="disease-col">
+              <ul>
+                <li><a href="#medicines">🌿 Asthma & Respiratory</a></li>
+                <li><a href="#medicines">🌿 Allergy & Immunity</a></li>
+                <li><a href="#medicines">🌿 Piles & Digestive</a></li>
+                <li><a href="#medicines">🌿 Skin Disorders</a></li>
+              </ul>
+            </div>
+            <div class="disease-col">
+              <ul>
+                <li><a href="#medicines">🌿 Heart-related Diseases</a></li>
+                <li><a href="#medicines">🌿 Joint Pain & Arthritis</a></li>
+                <li><a href="#medicines">🌿 Diabetes & Metabolism</a></li>
+                <li><a href="#medicines">🌿 Stress & Anxiety</a></li>
+              </ul>
+            </div>
+          </div>
+          <a href="#medicines" class="btn-view-all">View All Treatments</a>
+        </div>
+      </div>
+
+      <!-- ============================================================
+           GURUJI PROFILE
+           ============================================================ -->
+      <div class="guruji-profile">
+        <h4>Meet Guruji P. Sahadeva Raju</h4>
+
+        <div class="guruji-card">
+          <div class="guruji-card-head">
+            <span class="guruji-avatar">🛕</span>
+            <div>
+              <h5>Guruji P. Sahadeva Raju</h5>
+              <p>Tribal chief, healer &amp; head of Ayur Veda</p>
+            </div>
+          </div>
+          <p class="guruji-bio">
+            He is an illiterate tribal chief, yet he rattles off English words with amazing ease and his articulateness
+            leaves you speechless. The purpose for which he comes to the city is a noble one, and he goes about it with a
+            messianic zeal. Guruji P. Shavadev Raju claims that he can completely cure asthma, provide relief to diabetics
+            and help many forget that they ever had heart or blood-pressure trouble — all with the aid of Ayurveda.
+          </p>
+        </div>
+
+        <div class="about-images guruji-images">
+          <div class="about-img-card">
+            <div class="about-img">
+              <img src="shavadevraju.jpg" alt="Guruji P. Shahadev Raju">
+            </div>
+            <p>Guruji P. Shahadev Raju — tribal chief &amp; traditional healer</p>
+          </div>
+          <div class="about-img-card">
+            <div class="about-img">
+              <img src="shavadevraju1.jpg" alt="Guruji P. Shahadev Raju with his assistant">
+            </div>
+            <p>Guruji with his assistant</p>
+          </div>
+        </div>
+
+        <div class="guruji-section">
+          <h5>The Science of His Ancestors</h5>
+          <p>
+            Not that he ever learnt the science at an institute — to him it was handed down by his ancestors. He hopes to
+            help people with the knowledge that he learnt the hard way: it took him and his associates years of rummaging
+            through jungle shrubs and curing hundreds of fellow tribesmen with herbs to learn the science.
+          </p>
+        </div>
+
+        <div class="guruji-section">
+          <h5>Struggle, Exile and a Fateful Flood</h5>
+          <p>
+            D.P. Mishra, the then Chief Minister of Madhya Pradesh, had promised the legendary tribal king Praveen Banjdev
+            of Jagdalpur a "manna-of-sorts" in exchange for the tribals' votes. He also threatened to depose him and install
+            his younger brother Vijay in his place if he did not comply. In the clash that followed in 1966, Banjdev was
+            killed, and the indomitable tribals killed and wounded many policemen with bows and poison-tipped arrows.
+          </p>
+          <p>
+            There began a regime of repression against the tribals. It was then that they moved en masse deeper into the
+            jungles of Bhadrachalam district in Andhra Pradesh, where they remained cocooned, feeding on fruits and meat and
+            living totally cut off from civilization.
+          </p>
+          <p>
+            The flood of 1985 proved a godsend. All their dwellings were submerged and a few hundred tribals were killed.
+            There was a rush of leaders in helicopters — from Rajiv Gandhi to N.T. Rama Rao — who ordered immediate relief
+            and permanent dwellings. They were evacuated to Gandasiri village of Khammam district in Andhra Pradesh, where
+            pucca houses were built for all, arable land was provided and even a primary school was opened. The flood had
+            irrevocably changed the course of these tribals' lives, and more so of Shavadev himself.
+          </p>
+        </div>
+
+        <div class="guruji-grid">
+          <div class="guruji-fact">
+            <span class="guruji-fact-icon">🌿</span>
+            <h5>Ancestral Healing Wisdom</h5>
+            <p>His knowledge of herbal medicine was handed down by ancestors and learnt the hard way — years of searching jungle shrubs and healing hundreds of fellow tribesmen with herbs.</p>
+          </div>
+
+          <div class="guruji-fact">
+            <span class="guruji-fact-icon">🏛️</span>
+            <h5>A Sansthan Is His Mission</h5>
+            <p>The government provided them land and promised an "Ayurvedic Sansthan" to tap their knowledge for wider benefit. It has now become Guruji's mission in life.</p>
+          </div>
+
+          <div class="guruji-fact">
+            <span class="guruji-fact-icon">🎓</span>
+            <h5>Education &amp; the Future</h5>
+            <p>Though unlettered himself, he knows education is paramount. He has got 35 youths of his tribe into universities to study Ayurveda — they will combine scientific and empirical knowledge and set up the Sansthan, 7–8 years from now, producing Ayurvedic medicines at scale for the nation.</p>
+          </div>
+        </div>
+
+        <div class="guruji-section">
+          <h5>The Mission That Matters</h5>
+          <p>
+            In his last three stints — two years in Jabalpur, one year in Bhilai and six months in Satna — Guruji claims to
+            have treated thousands of afflicted persons; a testimonial from a top executive of the Bhilai Steel Plant seems
+            unnecessary. But he was in for a shock at Nagpur. Landing there with ten of his associates ("they are my
+            compounders," he says with a smile) and setting up tents at Raghuji Kagar, he had expected citizens to queue up
+            for a treatment that has no side-effects and was being offered free of charge.
+          </p>
+          <p>
+            Nagpurians, swindled many a time by mountebanks dressed up exactly as Guruji and his men do, refused to believe
+            he was any different. Ignored for over a month, his hopes started receding — until the PRO of a public sector
+            company heard his story and recognized the do-gooder in him.
+          </p>
+          <p>
+            He has since been meeting prominent citizens of Nagpur and treating them, but his main interest lies in treating
+            the common man. "The rich man can always get good treatment. It is the poorer citizen I would like to treat — and
+            as many of them as possible."
+          </p>
+        </div>
+
+        <blockquote class="guruji-quote">
+          <p>"We tribals have very few needs, only the basic, and our wants are even fewer. But times are a-changing. Our children today demand bicycles, and our women sarees."</p>
+          <cite>— Guruji P. Shavadev Raju, the amusement reflecting in his large, expressive eyes</cite>
+        </blockquote>
+
+        <div class="guruji-section">
+          <h5>A Wider World</h5>
+          <p>
+            It was in his early twenties that Guruji set out to see the outside world. The list of his friends and patrons now
+            reads like a who's who of politicians, top bureaucrats and filmstars — perusing the innumerable testimonials of his
+            medicinal expertise, face-reading and fortune-telling can be an exhausting experience. He has covered a large part
+            of the country, going as far as Sikkim, whose Chief Minister Nar Bahadur Bhandari is a good friend of his father.
+          </p>
+          <p>
+            He vividly remembers when about fifteen white men came to his father promising the tribe all facilities and a lot
+            of money, wanting only one thing in return — the setting up of a church in the area. The tribal king refused to
+            fall for the bait.
+          </p>
+          <p>
+            The tribe has now taken to farming and trade, but Guruji, himself well-off with 35 acres of farmland and a
+            tractor, isn't satisfied. The only way the nation will recognize the true worth of his people is through Ayurveda,
+            he asserts — and all that he does now is aimed at that. For him, the mission matters, the place doesn't.
+          </p>
+        </div>
+
+        <p class="guruji-note">
+          Historical note: D.P. Mishra, the then Chief Minister of Madhya Pradesh, promised the legendary tribal king Praveen
+          Banjdev of Jagdalpur benefits in exchange for the tribals' votes. When Banjdev refused to comply, a clash followed in
+          1966 in which he was killed, followed by a regime of repression that drove the tribals deeper into the jungles.
+        </p>
+      </div>
+    </div>
+  </section>
+
+<!-- ============================================================
+       PHOTO GALLERY SECTION
+       ============================================================ -->
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <h2>Our <span>Photo Gallery</span></h2>
+      <div class="divider">
+        <span></span>
+      </div>
+      <p class="section-desc">Glimpses of our healers, ceremonies, and the timeless wisdom that keeps the spirit of Ayurveda alive.</p>
+
+            <div class="gallery-list" id="galleryList">
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="malhotra.jpg.jpeg" alt="Guruji with Army Chief General O.P.Malhotra">
+          
+<figcaption class="gallery-caption">Guruji with Army Chief General O.P.Malhotra</figcaption>
+          </div>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="manmohan.jpg.jpeg" alt="Guruji with Former Chief Justice Man Mohan Singh Gujral">
+          
+<figcaption class="gallery-caption">Guruji with Former Chief Justice Man Mohan Singh Gujral</figcaption>
+          </div>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="indera.jpg.jpeg" alt="Guruji with Former Prime Minister Indira Gandhi">
+          
+<figcaption class="gallery-caption">Guruji with Former Prime Minister Indira Gandhi</figcaption>
+          </div>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="rajkumar.jpg.jpeg" alt="Guruji with filmstars Rajkumar">
+          
+<figcaption class="gallery-caption">Guruji with filmstars Rajkumar</figcaption>
+          </div>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="ramarao.jpg.jpeg" alt="Guruji with Former A.P Chief Minister N.T.Ramarao">
+          
+<figcaption class="gallery-caption">Guruji with Former A.P Chief Minister N.T.Ramarao</figcaption>
+          </div>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="venkatraman.jpg.jpeg" alt="Guruji with Former President R.Venkataraman">
+          
+<figcaption class="gallery-caption">Guruji with Former President R.Venkataraman</figcaption>
+          </div>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="balram.jpg.jpeg" alt="Guruji with Former Lok Sabha Speaker Balram">
+          
+<figcaption class="gallery-caption">Guruji with Former Lok Sabha Speaker Balram</figcaption>
+          </div>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="desai.jpg.jpeg" alt="Guruji with Former President Mr. Moraji desai">
+          
+<figcaption class="gallery-caption">Guruji with Former President Mr. Moraji desai</figcaption>
+          </div>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="singh.jpg.jpeg" alt="Guruji with Former President Zail Singh">
+          
+<figcaption class="gallery-caption">Guruji with Former President Zail Singh</figcaption>
+          </div>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="whattrsep.jpg.jpeg" alt="Guruji with filmstar Chiranjeevi">
+          
+<figcaption class="gallery-caption">Guruji with filmstar Chiranjeevi</figcaption>
+          </div>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="bedi shetty.jpg" alt="Guruji with Bedi Shetty">
+          
+<figcaption class="gallery-caption">Guruji with Bedi Shetty</figcaption>
+          </div>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="pitchamuth.jpg" alt="Guruji with Dy Commandant P. Pichaimuthu">
+          
+<figcaption class="gallery-caption">Guruji with Dy Commandant P. Pichaimuthu</figcaption>
+          </div>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="rajinikanth.jpg" alt="Guruji with filmstar Rajinikanth">
+          
+<figcaption class="gallery-caption">Guruji with filmstar Rajinikanth</figcaption>
+          </div>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="rajiv.jpg" alt="Guruji with Former Prime Minister Rajiv Gandhi">
+          
+<figcaption class="gallery-caption">Guruji with Former Prime Minister Rajiv Gandhi</figcaption>
+          </div>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="affaris.jpg" alt="Guruji at a public affairs event">
+          
+<figcaption class="gallery-caption">Guruji at a Public Affairs Event</figcaption>
+          </div>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="abdul.jpg" alt="Guruji with Dr. A.P.J. Abdul Kalam">
+          
+<figcaption class="gallery-caption">Guruji with Dr. A.P.J. Abdul Kalam</figcaption>
+          </div>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="abdul1.jpg" alt="Guruji with Dr. A.P.J. Abdul Kalam">
+          
+<figcaption class="gallery-caption">Guruji Honoured by Dr. A.P.J. Abdul Kalam</figcaption>
+          </div>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="black.jpg" alt="Guruji at a formal ceremony">
+          
+<figcaption class="gallery-caption">Guruji at a Formal Ceremony</figcaption>
+          </div>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="blqck1.jpg" alt="Guruji at a formal gathering">
+          
+<figcaption class="gallery-caption">Guruji at a Formal Gathering</figcaption>
+          </div>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="govind.jpg" alt="Guruji with Govind">
+          
+<figcaption class="gallery-caption">Guruji with Govind</figcaption>
+          </div>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="police.jpg" alt="Guruji felicitated by police officials">
+          
+<figcaption class="gallery-caption">Guruji Felicitated by Police Officials</figcaption>
+          </div>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="income.jpg" alt="Guruji at a public event">
+          
+<figcaption class="gallery-caption">Guruji at a Public Event</figcaption>
+          </div>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="jains.jpg" alt="Guruji with the Jain community">
+          
+<figcaption class="gallery-caption">Guruji with the Jain Community</figcaption>
+          </div>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="acter.jpg" alt="Guruji with a film actor">
+          
+<figcaption class="gallery-caption">Guruji with a Film Actor</figcaption>
+          </div>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="lal.jpg" alt="Guruji with Lal">
+          
+<figcaption class="gallery-caption">Guruji with Lal</figcaption>
+          </div>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="tata.jpg" alt="Guruji with a member of the Tata family">
+          
+<figcaption class="gallery-caption">Guruji with the Tata Family</figcaption>
+          </div>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="tamil.jpg" alt="Guruji honoured by the Tamil Nadu Government">
+          
+<figcaption class="gallery-caption">Guruji Honoured by the Tamil Nadu Government</figcaption>
+          </div>
+        </figure>
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="rammm.jpg" alt="Guruji at a religious ceremony">
+          
+<figcaption class="gallery-caption">Guruji at a Religious Ceremony</figcaption>
+          </div>
+        </figure>
+
+              <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="don.jpg" alt="Guruji at a public function">
+          
+<figcaption class="gallery-caption">Guruji at a public function</figcaption>
+          </div>
+        </figure>
+
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="granny.jpg" alt="Guruji blessing an elderly devotee">
+          
+<figcaption class="gallery-caption">Guruji blessing an elderly devotee</figcaption>
+          </div>
+        </figure>
+
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="grandpa.jpg" alt="Guruji with an elderly devotee">
+          
+<figcaption class="gallery-caption">Guruji with an elderly devotee</figcaption>
+          </div>
+        </figure>
+
+        <figure class="gallery-card">
+          <div class="gallery-img">
+            <img src="kuvempu.jpg" alt="Guruji at a literary tribute event">
+          
+<figcaption class="gallery-caption">Guruji at a literary tribute event</figcaption>
+          </div>
+        </figure>
+      </div>
+
+<div class="gallery-pagination" id="galleryPagination" role="navigation" aria-label="Gallery pages"></div>
+    </div>
+  </section>
+
+<!-- ============================================================
+       APPRECIATIONS SECTION
+       ============================================================ -->
+  <section class="appreciation-section" id="appreciations">
+    <div class="container">
+      <h2>Appreciations & <span style="color:var(--gold-light);">Testimonials</span></h2>
+      <div class="divider light">
+        <span></span>
+      </div>
+
+      <div class="carousel">
+        <div class="carousel-track" id="appTrack">
+          <div class="carousel-item">
+            <div class="card">
+              <div class="card-img card-img-clickable" data-full="Screenshot 2026-08-24 165137.png" title="Click to view full letter">
+                <img src="new-delhi-img.png" alt="Testimonial letter from New Delhi">
+                <span class="card-img-zoom">&#128269; View</span>
+              </div>
+              <span class="card-icon">🏛️</span>
+              <p><span>New Delhi, India</span>L.K. Advani, Minister of Information & Broadcasting – A remarkable traditional healer preserving India's ancient wisdom.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="card-img card-img-clickable" data-full="Screenshot 2026-08-24 171603.png" title="Click to view full letter">
+                <img src="air-force-logo.png" alt="Air Force Station testimonial letter">
+                <span class="card-img-zoom">&#128269; View</span>
+              </div>
+              <span class="card-icon">✈️</span>
+              <p><span>Air Force Station</span>Air Commodore M S Bawa, AVSM, VM – Exceptional Ayurvedic expertise and dedicated service.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="card-img card-img-clickable" data-full="Screenshot 2026-08-25 101952.png" title="Click to view full letter">
+                <img src="tn-logo.png" alt="Testimonial letter">
+                <span class="card-img-zoom">&#128269; View</span>
+              </div>
+              <span class="card-icon">🏛️</span>
+              <p><span>Tamilnadu Government</span>S.Dhinakaran Under Secretary to Govt.(UG).</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="card-img card-img-clickable" data-full="Screenshot 2026-08-25 113258.png" title="Click to view full letter">
+                <img src="sbi-logo.png" alt="State Bank of India testimonial letter">
+                <span class="card-img-zoom">&#128269; View</span>
+              </div>
+              <span class="card-icon">🏦</span>
+              <p><span>State Bank of India</span>C.V.S.N. Murthy, Asst. General Manager – Genuine Ayurvedic healing with remarkable results.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="card-img card-img-clickable" data-full="Screenshot 2026-08-25 104031.png" title="Click to view full letter">
+                <img src="ap-logo.png" alt="Testimonial letter">
+                <span class="card-img-zoom">&#128269; View</span>
+              </div>
+              <span class="card-icon">🏛️</span>
+              <p><span>Testimonial Letter</span>Click the image to view the full testimonial letter.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="card-img card-img-clickable" data-full="Screenshot 2026-08-25 104436.png" title="Click to view full letter">
+                <img src="new-delhi-img.png" alt="Testimonial letter">
+                <span class="card-img-zoom">&#128269; View</span>
+              </div>
+              <span class="card-icon">🏛️</span>
+              <p><span>Testimonial Letter</span>Click the image to view the full testimonial letter.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <div class="card-img card-img-clickable" data-full="Screenshot 2026-08-25 104121.png" title="Click to view full letter">
+                <img src="ap-logo.png" alt="Testimonial letter">
+                <span class="card-img-zoom">&#128269; View</span>
+              </div>
+              <span class="card-icon">🏛️</span>
+              <p><span>Testimonial Letter</span>Click the image to view the full testimonial letter.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <span class="card-icon">🏛️</span>
+              <p><span>Tamilnadu Government</span>S.Dhinakaran<br>Under Secretary to Govt.(UG)</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <span class="card-icon">👮</span>
+              <p><span>Tamilnadu Special Police, Coimbatore</span>P. Pichaimuthu, Dy Commandant – Trusted and effective natural treatments.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card">
+              <span class="card-icon">🏛️</span>
+              <p><span>Warangal Range</span>H.J. Dora, IPS – Dedicated practitioner of traditional herbal medicine.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ============================================================
+       ARTICLES SECTION (Press coverage)
+       ============================================================ -->
+  <section class="articles-section" id="articles">
+    <div class="container">
+      <h2>Articles</h2>
+      <div class="divider">
+        <span></span>
+      </div>
+      <p class="section-desc">Press coverage and newspaper features on Guruji's healing work.</p>
+
+      <div class="articles-grid">
+        <figure class="article-card">
+          <img src="art1.jpg" alt="Newspaper article on Guruji's Ayurvedic healing — part 1" loading="lazy">
+        </figure>
+        <figure class="article-card">
+          <img src="art2.jpg" alt="Newspaper article on Guruji's Ayurvedic healing — part 2" loading="lazy">
+        </figure>
+        <figure class="article-card">
+          <img src="art3.jpg" alt="Newspaper article on Guruji's Ayurvedic healing — part 3" loading="lazy">
+        </figure>
+        <figure class="article-card">
+          <img src="art4.jpg" alt="Newspaper article on Guruji's Ayurvedic healing — part 4" loading="lazy">
+        </figure>
+        <figure class="article-card">
+          <img src="telugu-article-sml-new.jpg" alt="Telugu newspaper article on Guruji" loading="lazy">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       MEDICINES SECTION
+       ============================================================ -->
+  <section class="medicines-section" id="medicines">
+    <div class="container">
+      <h2>Our <span>Medicines</span></h2>
+      <div class="divider">
+        <span></span>
+      </div>
+      <p class="section-desc">The following health conditions are treated with our traditional tribal herbal medicines. Click on any condition to enquire about its treatment.</p>
+<div class="med-detail-grid">
+        <div class="med-item">
+          <div class="med-item-head">
+            <h3>🌿 Asthma</h3>
+            <span class="med-item-toggle" aria-hidden="true">+</span>
+          </div>
+          <div class="med-item-body">
+            <p>Asthma is reported to respond within roughly <strong>30–90 days</strong> of herbal treatment.</p>
+            <p class="med-byline">A 45-year-old patient, who suffered asthma for six years and visited hospitals without lasting relief, reported that with treatment the disease "flew away within a month" — she could again climb a flight of stairs without breathing trouble.</p>
+          </div>
+        </div>
+
+        <div class="med-item">
+          <div class="med-item-head">
+            <h3>🍃 Heart-related diseases</h3>
+            <span class="med-item-toggle" aria-hidden="true">+</span>
+          </div>
+          <div class="med-item-body">
+            <p>Heart conditions (also described as valve blockage) are reported treatable, with initial-stage treatment around <strong>4 months</strong>.</p>
+            <p class="med-byline">In 2003, a patient scheduled for bypass surgery after an angiogram showed three blockages reported his heart problem resolved after five months of herbal care.</p>
+          </div>
+        </div>
+
+        <div class="med-item">
+          <div class="med-item-head">
+            <h3>🌹 Skin diseases &amp; Psoriasis</h3>
+            <span class="med-item-toggle" aria-hidden="true">+</span>
+          </div>
+          <div class="med-item-body">
+            <p>Skin diseases are reported fully treatable; <strong>psoriasis</strong> may take about <strong>six months</strong>.</p>
+          </div>
+        </div>
+
+        <div class="med-item">
+          <div class="med-item-head">
+            <h3>🌿 White hair</h3>
+            <span class="med-item-toggle" aria-hidden="true">+</span>
+          </div>
+          <div class="med-item-body">
+            <p>White hair is reported reversible in youth within <strong>4–5 months</strong> of treatment.</p>
+          </div>
+        </div>
+
+        <div class="med-item">
+          <div class="med-item-head">
+            <h3>🧠 Memory power</h3>
+            <span class="med-item-toggle" aria-hidden="true">+</span>
+          </div>
+          <div class="med-item-body">
+            <p>Herbal formulations are available to support memory and concentration. <a href="#contact">Enquire</a> to learn the recommended course for your condition.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="med-general-note">
+        Treatment may also be taken alongside allopathy, homeopathy or siddha therapy, and is reported to be free of side effects. An unspecified "abnormal condition" is reported to take about 8 months (initial stage 2–3 months), and a reported "romantic problem" is said to be treatable under age 60 over about six months. Please consult a qualified physician before beginning any treatment.
+      </div>
+
+      <div class="medicine-disease-grid">
+        <div class="disease-col">
+          <ul>
+            <li><a href="#contact">🌿 Asthma</a></li>
+            <li><a href="#contact">🌿 Skin diseases</a></li>
+            <li><a href="#contact">🌿 White hair</a></li>
+            <li><a href="#contact">🌿 Memory power</a></li>
+            <li><a href="#contact">🌿 Sugar</a></li>
+            <li><a href="#contact">🌿 Male / Female fertility</a></li>
+            <li><a href="#contact">🌿 Dandruff</a></li>
+            <li><a href="#contact">🌿 Allergy</a></li>
+          </ul>
+        </div>
+        <div class="disease-col">
+          <ul>
+            <li><a href="#contact">🌿 Paralysis</a></li>
+            <li><a href="#contact">🌿 Piles</a></li>
+            <li><a href="#contact">🌿 Migraine</a></li>
+            <li><a href="#contact">🌿 Heart-related diseases</a></li>
+            <li><a href="#contact">🌿 Psoriasis</a></li>
+            <li><a href="#contact">🌿 Weight reduction</a></li>
+            <li><a href="#contact">🌿 Ulcer</a></li>
+            <li><a href="#contact">🌿 Arthritis</a></li>
+          </ul>
+        </div>
+        <div class="disease-col">
+          <ul>
+            <li><a href="#contact">🌿 Blood piles</a></li>
+            <li><a href="#contact">🌿 Fistular</a></li>
+            <li><a href="#contact">🌿 Kidney stone</a></li>
+            <li><a href="#contact">🌿 Leucorrhea</a></li>
+            <li><a href="#contact">🌿 Headache</a></li>
+            <li><a href="#contact">🌿 Leucoderma</a></li>
+            <li><a href="#contact">🌿 T.B.</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="section-note">…and almost <strong>360 diseases</strong> are cured with our natural herbal medicines. Research continues on new diseases through herbal medicine.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       NEWS SECTION
+       ============================================================ -->
+  <section class="news-section" id="news">
+    <div class="container">
+      <h2>Latest <span style="color:var(--gold-light);">News</span></h2>
+      <div class="divider light">
+        <span></span>
+      </div>
+
+      <div class="news-grid">
+        <div class="news-card">
+          <span class="news-date">Aug 2026</span>
+          <h3>Ayurveda Recognized by WHO as Traditional Medicine</h3>
+          <p>The World Health Organization has formally recognized Ayurveda in its global traditional medicine strategy.</p>
+          <a href="#news" class="news-link">Read More →</a>
+        </div>
+        <div class="news-card">
+          <span class="news-date">Jul 2026</span>
+          <h3>New Panchakarma Center Opens</h3>
+          <p>Our new state-of-the-art Panchakarma center is now open, offering authentic five-action detox therapies.</p>
+          <a href="#news" class="news-link">Read More →</a>
+        </div>
+        <div class="news-card">
+          <span class="news-date">Jun 2026</span>
+          <h3>Free Ayurvedic Health Camp</h3>
+          <p>Join us for a free community health camp – free consultations and herbal medicine samples for all.</p>
+          <a href="#news" class="news-link">Read More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ============================================================
+       FAQ SECTION
+       ============================================================ -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <h2>Frequently Asked <span>Questions</span></h2>
+      <div class="divider">
+        <span></span>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item active">
+          <div class="faq-question">
+            <h3>What is Ayurveda?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Ayurveda is a 5,000-year-old system of natural healing that originated in India. It emphasizes balance in body, mind, and spirit through diet, herbal remedies, yoga, and lifestyle practices.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Are your medicines safe and side-effect free?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes. Our medicines are prepared from 100% natural, pure herbs following traditional methods. They are free from chemicals and have no known side effects when taken as directed.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Can Ayurveda be used alongside allopathic treatment?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes. Ayurveda is complementary to allopathic treatments and can be safely used alongside them under medical supervision. Many patients experience enhanced recovery with combined approaches.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>How long does treatment take to show results?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Results vary depending on the condition and individual constitution. Some conditions improve within weeks, while chronic conditions may take several months of consistent treatment.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>How do I order medicines?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Simply contact us through the form below, via phone, or WhatsApp. Our expert will guide you on the right medicines based on your condition and health profile.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT SECTION
+       ============================================================ -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <h2>Get In <span>Touch</span></h2>
+      <div class="divider">
+        <span></span>
+      </div>
+
+      <div class="contact-flex">
+        <div class="contact-info">
+          <p>Have a health concern? Our Ayurvedic experts are here to help you on your healing journey.</p>
+          <ul class="contact-details">
+            <li>
+              <span class="contact-icon">📍</span>
+              <span><strong>Guruji Dr:</strong> No. 11, 1st Floor, Chellandiamman Kovil Street, Vellalore Road, Near Aravan Kovil, Singanallur, Coimbatore</span>
+            </li>
+            <li>
+              <span class="contact-icon">📞</span>
+              <span><strong>Mobile:</strong> <a href="tel:+919489934444">+91 94899 34444</a></span>
+            </li>
+            <li>
+              <span class="contact-icon">📧</span>
+              <span><strong>Email:</strong> info@ayurveda.com</span>
+            </li>
+            <li>
+              <span class="contact-icon">🕘</span>
+              <span><strong>Hours:</strong> Mon – Sat: 9:00 AM – 7:00 PM</span>
+            </li>
+          </ul>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <input type="text" placeholder="Your Name *" required>
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Your Email *" required>
+          </div>
+          <div class="form-group">
+            <input type="text" placeholder="Phone Number">
+          </div>
+          <div class="form-group">
+            <select>
+              <option value="">Select Health Concern</option>
+              <option>Asthma & Respiratory</option>
+              <option>Allergy & Immunity</option>
+              <option>Piles & Digestive</option>
+              <option>Skin Disorders</option>
+              <option>Heart-related Diseases</option>
+              <option>Joint Pain & Arthritis</option>
+              <option>Diabetes & Metabolism</option>
+              <option>Stress & Anxiety</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea placeholder="Describe your health concern... *" required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="#home" class="logo">
+            <img src="generated_image_1 (1).png" alt="AYURVEDA logo" class="logo-icon">
+          </a>
+          <p>Preserving the ancient wisdom of Ayurveda for modern generations. Pure herbal healing, trusted for over 5,000 years.</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#appreciations">Appreciations</a></li>
+            <li><a href="#articles">Articles</a></li>
+            <li><a href="#medicines">Medicines</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Treatments</h4>
+          <ul>
+            <li><a href="#medicines">Asthma</a></li>
+            <li><a href="#medicines">Allergy</a></li>
+            <li><a href="#medicines">Piles</a></li>
+            <li><a href="#medicines">Skin Care</a></li>
+            <li><a href="#medicines">Heart Health</a></li>
+            <li><a href="#medicines">Joint Pain</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p><strong>Guruji Dr</strong></p>
+          <p>📍 No. 11, 1st Floor,<br>
+             Chellandiamman Kovil Street, Vellalore Road,<br>
+             Near Aravan Kovil, Singanallur,<br>
+             Coimbatore</p>
+          <p>📞 <a href="tel:+919489934444">+91 94899 34444</a></p>
+          <p>📧 info@ayurveda.com</p>
+          <p>🕘 Mon – Sat: 9:00 AM – 7:00 PM</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Ayurveda. All rights reserved. | Crafted with 🍃 by Ayurveda Team</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox for testimonial letters -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="Full testimonial">
+  </div>
+
+  <script src="js/script.js?v=5"></script>
+</body>
+</html>
